@@ -3,54 +3,49 @@ set PERSONAS;
 set DIAS;
 set DIAS_CON_MIN_3;
 set DIAS_CON_MIN_2;
-#set FINDE_1;
-#set FINDE_2;
-#set FINDE_3;
-#set FINDE_4;
-#set FINDE_5;
 
 #vars
-var y{i in PERSONAS, j in DIAS} binary;
+var y{i in PERSONAS, j in DIAS}, binary;
 
 #funcional
-minimize z: y[1,3] + y[2,5] + y[3, 22] + y[4,30] + y[5,2] + y[6,7] + y[7,13] + y[8,29] + y[9,12] + y[10,4] + y[11,18] + y[12,18] + y[13,6] + y[14,30];
+minimize z: y["juan",3] + y["martin",5] + y["jose", 22] + y["rodrigo",30] + y["maria",2] + y["valeria",7] + y["roxane",13] + y["lidia",29] + y["celia",12] + y["arnaldo",4] + y["hernan",18] + y["karina",18] + y["guillermo",6] + y["ramon",30];
 
 #restricciones
 s.t. trabajanExactamente8Dias{i in PERSONAS}:
     sum {j in DIAS} y[i,j] = 8;
-s.t. diasConsecutivos{i in PERSONAS, j in DIAS: j<>'30'}:
+s.t. diasConsecutivos{i in PERSONAS, j in DIAS: j<>30}:
     y[i,j] + y[i,j+1] <= 1;
 s.t. minimo3Personas{j in DIAS_CON_MIN_3}:
     sum {i in PERSONAS} y[i,j] >= 3;
 s.t. minimo2Personas{j in DIAS_CON_MIN_2}:
     sum {i in PERSONAS} y[i,j] >= 2;
 s.t. findeJuan:
-    y[0,1] + y[0,2] = 0;
+    y["juan",1] + y["juan",2] = 0;
 s.t. findeMartin:
-    y[1,7] + y[1,8] + y[1,9] = 0;
+    y["martin",7] + y["martin",8] + y["martin",9] = 0;
 s.t. findeJose:
-    y[2,14] + y[2,15] + y[2,16]= 0;
+    y["jose",14] + y["jose",15] + y["jose",16]= 0;
 s.t. findeRodrigo:
-    y[3,21] + y[3,22] + y[3,23] = 0;
+    y["rodrigo",21] + y["rodrigo",22] + y["rodrigo",23] = 0;
 s.t. findeMaria:
-    y[4,28] + y[4,29] + y[4,30]  = 0;
+    y["maria",28] + y["maria",29] + y["maria",30]  = 0;
 s.t. findeValeria:
-    y[5,1] + y[5,2] = 0;
+    y["valeria",1] + y["valeria",2] = 0;
 s.t. findeRoxane:
-    y[6,7] + y[6,8] + y[6,9] = 0;
+    y["roxane",7] + y["roxane",8] + y["roxane",9] = 0;
 s.t. findeLidia:
-    y[7,14] + y[7,15] + y[7,16]= 0;
+    y["lidia",14] + y["lidia",15] + y["lidia",16]= 0;
 s.t. findeCelia:
-    y[8,21] + y[8,22] + y[8,23] = 0;
+    y["celia",21] + y["celia",22] + y["celia",23] = 0;
 s.t. findeArnaldo:
-    y[9,28] + y[9,29] + y[9,30]  = 0;
+    y["arnaldo",28] + y["arnaldo",29] + y["arnaldo",30]  = 0;
 s.t. findeHernan:
-    y[10,1] + y[10,2] = 0;
+    y["hernan",1] + y["hernan",2] = 0;
 s.t. findeKarina:
-    y[11,7] + y[11,8] + y[11,9] = 0;
+    y["karina",7] + y["karina",8] + y["karina",9] = 0;
 s.t. findeGuillermo:
-    y[12,14] + y[12,15] + y[12,16]= 0;
+    y["guillermo",14] + y["guillermo",15] + y["guillermo",16]= 0;
 s.t. findeRamon:
-    y[13,21] + y[13,22] + y[13,23] = 0;
+    y["ramon",21] + y["ramon",22] + y["ramon",23] = 0;
 
 end;
