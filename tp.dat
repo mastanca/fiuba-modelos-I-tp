@@ -7,7 +7,7 @@ set DIAS_CON_MIN_3 := 3 10 17 24 5 12 19 26 1 8 15 22 29 2 9 16 23 30;
 set DIAS_CON_MIN_2 := 4 11 18 25 6 13 20 27 7 14 21 28;
 
 
-#Nuevos parametros para la separacion del modelo
+#Nuevos parametros para la separacion del modelo.
 set DIAS_MAXIMOS_LABORABLES := 8;
 
 param DIAS_DESEABLES:=
