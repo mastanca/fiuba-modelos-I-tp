@@ -7,6 +7,7 @@ set DIAS_CON_MIN_3 := 3 10 17 24 5 12 19 26 1 8 15 22 29 2 9 16 23 30;
 set DIAS_CON_MIN_2 := 4 11 18 25 6 13 20 27 7 14 21 28;
 set DIAS_DE_FIN_SEMANA := viernes sabado domingo;
 
+#Dias que idealmente no quieren trabajar
 param DIAS_DESEABLES:=
 juan       3
 martin     5
@@ -23,8 +24,7 @@ karina     18
 guillermo  6
 ramon      30;
 
-#para el primer fin de semana, le puse 1,1,2 porque no se como se podria comportar el glpk con un dia 0, pero habria que verificarlo.
-#esto puede mejorarse como hablaron en clase, aqui unicamente reproduzco el sistema ya usado en el modelo
+#Dias que obligatoriamente no pueden trabajar
 param DIAS_NO_LABORABLES: juan martin jose rodrigo maria valeria roxane lidia celia arnaldo hernan karina guillermo ramon:=
 viernes                       1      7   14      21    28       1      7    14    21      28      1      7        14    21
 sabado                        1      8   15      22    29       1      8    15    22      29      1      8        15    22
