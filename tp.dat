@@ -5,10 +5,7 @@ set PERSONAS := juan martin jose rodrigo maria valeria roxane lidia celia arnald
 set DIAS := 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30;
 set DIAS_CON_MIN_3 := 3 10 17 24 5 12 19 26 1 8 15 22 29 2 9 16 23 30;
 set DIAS_CON_MIN_2 := 4 11 18 25 6 13 20 27 7 14 21 28;
-
-
-#Nuevos parametros para la separacion del modelo.
-set DIAS_MAXIMOS_LABORABLES := 8;
+set DIAS_DE_FIN_SEMANA := viernes sabado domingo;
 
 param DIAS_DESEABLES:=
 juan       3
@@ -28,7 +25,7 @@ ramon      30;
 
 #para el primer fin de semana, le puse 1,1,2 porque no se como se podria comportar el glpk con un dia 0, pero habria que verificarlo.
 #esto puede mejorarse como hablaron en clase, aqui unicamente reproduzco el sistema ya usado en el modelo
-param DIAS_NO_LABORABLES : juan martin jose rodrigo maria valeria roxane lidia celia arnaldo hernan karina guillermo ramon:=
+param DIAS_NO_LABORABLES: juan martin jose rodrigo maria valeria roxane lidia celia arnaldo hernan karina guillermo ramon:=
 viernes                       1      7   14      21    28       1      7    14    21      28      1      7        14    21
 sabado                        1      8   15      22    29       1      8    15    22      29      1      8        15    22
 domingo                       2      9   16      23    30       2      9    16    23      30      2      9        16    23;
