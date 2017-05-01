@@ -26,16 +26,16 @@ guillermo  6
 ramon      30;
 
 #Dias que obligatoriamente no pueden trabajar
-param DIAS_NO_LABORABLES: juan martin jose rodrigo maria valeria roxane lidia celia arnaldo hernan karina guillermo ramon:=
-viernes                       1      7   14      21    28       1      7    14    21      28      1      7        14    21
-sabado                        1      8   15      22    29       1      8    15    22      29      1      8        15    22
-domingo                       2      9   16      23    30       2      9    16    23      30      2      9        16    23;
+#param DIAS_NO_LABORABLES: juan martin jose rodrigo maria valeria roxane lidia celia arnaldo hernan karina guillermo ramon:=
+#viernes                       1      7   14      21    28       1      7    14    21      28      1      7        14    21
+#sabado                        1      8   15      22    29       1      8    15    22      29      1      8        15    22
+#domingo                       2      9   16      23    30       2      9    16    23      30      2      9        16    23;
 
-param FINDESEMANA_NUMERO:viernes sabado domingo:= 
+param FINDESEMANA_NUMERO:viernes sabado domingo:=
 1   						   1      1       2
-2                              7      8       9 
-3                             14     15      16 
-4                             21     22      23 
+2                              7      8       9
+3                             14     15      16
+4                             21     22      23
 5                             28     29      30;
 
 param FINDESEMANA_NO_LABORABLE:=
