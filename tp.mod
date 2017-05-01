@@ -35,7 +35,7 @@ s.t. minimo3Personas{j in DIAS_CON_MIN_3}:
 	
 s.t. minimo2Personas{j in DIAS_CON_MIN_2}:
     sum {i in PERSONAS} y[i,j] >= 2;
-/*
+/* . 
 #Opcion para que se retrinjan por dias no laborales obligatoriamente (cualquier dia del mes)
 s.t. restriccionesPorFinde { j in PERSONAS } :
     sum { i in DIAS_DE_FIN_SEMANA } y[j,DIAS_NO_LABORABLES[i,j]] = 0;
